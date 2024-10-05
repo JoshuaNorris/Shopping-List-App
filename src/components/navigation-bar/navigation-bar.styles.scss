@@ -1,0 +1,96 @@
+@import '../../App.scss';
+
+.navigation-container {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: $navigation-bar-color;
+}
+
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-icon {
+    padding-right: 20px;
+}
+
+.logo-label {
+    font-size: 20px;
+    color: $background-color;
+}
+
+
+
+
+
+// Search Box
+
+.search-box {
+    width: fit-content;
+    height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-search {
+    height: 100%; // Match the height of the parent container
+    width: 70px; // Set a default width for the input field
+    border-style: none;
+    padding: 10px;
+    font-size: 16px; // Increase font size for better readability
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background-color: $background-color;
+    padding-right: 50px; // Adjust padding for the button
+    color: #fff;
+}
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; // Adjust width to fit the icon better
+    height: 20px; // Adjust height to fit the icon better
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px; // Position it closer to the right edge
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.input-search::placeholder {
+    color: $navigation-bar-color;
+    font-size: 16px; // Match placeholder font size
+    letter-spacing: 1px; // Match placeholder letter spacing
+    font-weight: 100;
+}
+
+.btn-search:focus ~ .input-search{
+    width: 200px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+  }
+  .input-search:focus{
+    width: 200px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+  }
