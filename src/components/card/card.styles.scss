@@ -1,27 +1,62 @@
 
+@mixin img-button-dimensions {
+    padding: 7px 7px 7px;
+    width: calc(100% - 14px);
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: .3s;
-    border-radius: 5px;
-    width: 300px;
+    transition: .2s;
+    width: 200px;
     margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
 
     &:active {
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-        transform: scale(0.995);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transform: scale(0.999);
     }
-}
-
-.card-info-container {
-    padding: 2px 16px;
 }
 
 
 .card-image {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
+    @include img-button-dimensions;
+}
+
+.card-title {
+    @include img-button-dimensions;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.card-btn {
+    @include img-button-dimensions;
+    margin-bottom: 5px;
+    background-color: transparent;
+}
+
+.ingredients-btn {
+    color: green;
+    border: 2px solid green;
+
+    &:active {
+        transform: scale(0.995);
+    }
+}
+
+.recipe-btn {
+    color: orange;
+    border: 2px solid orange;
+
+    &:active {
+        transform: scale(0.995);
+    }
 }
