@@ -3,9 +3,13 @@ import './navigation-bar.styles.scss';
 import { Outlet } from "react-router-dom";
 import searchIcon from '../../assets/search-icon.svg';
 import burgerIcon from '../../assets/burger-icon.svg';
+import React from "react";
 
+type NavigationProps = {
+    searchFieldHandler (event: React.InputHTMLAttributes<HTMLInputElement>): void;
+}
 
-export const NavigationBar = () => {
+export const NavigationBar:React.FC<NavigationProps> = ({searchFieldHandler}) => {
     return (
         <Fragment>
             <div className="navigation-container">
@@ -15,7 +19,7 @@ export const NavigationBar = () => {
                 </div>
                 <div className="search-box">
                     <button className="btn-search"><img src={searchIcon} /></button>
-                    <input type="text" placeholder="Search..." className="input-search"/>
+                    <input onChange={searchFieldHandler} type="text" placeholder="Search..." className="input-search"/>
                 </div>
             </div>
             <Outlet />
